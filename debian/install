@@ -1,2 +1,3 @@
 QRLJacker usr/share/
 debian/geckodriver usr/share/QRLJacker/
+helper-script/qrljacker usr/bin/
