@@ -1,0 +1,26 @@
+Source: qrljacking
+Section: unknown
+Priority: optional
+Maintainer: Joe <joe@rstrike.my.id>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+Standards-Version: 4.6.2
+Homepage: https://github.com/OWASP/QRLJacking
+Vcs-Browser: https://github.com/pwnpine/qrljacking
+Vcs-Git: https://github.com/pwnpine/qrljacking.git
+
+Package: qrljacking
+Architecture: any
+Multi-Arch: foreign
+Depends:
+ python3-terminaltables,
+ python3-selenium,
+ python3-pil,
+ python3-jinja2,
+ python3-useragents,
+ python3-pathlib2,
+ ${shlibs:Depends},
+ ${misc:Depends},
+Recommends: firefox-esr
+Description: OWASP QRLjacking or Quick Response code login jacking

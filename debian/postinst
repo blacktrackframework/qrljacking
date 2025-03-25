@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+### Install geckodriver
+
+TARGET_ARCH="$ARCH"
+VERSION="0.36.0"
+GECKODRIVER="usr/share/QRLJacker/geckodriver/"
+
+if [ -e "$GECKODRIVER/geckodriver-$VERSION-$ARCH" ];
+	ln -s $GECKODRIVER/geckodriver-$VERSION-$ARCH /usr/local/bin/geckodriver
+	ln -s $GECKODRIVER/geckodriver-$VERSION-$ARCH /usr/local/bin/geckodriver
+	ln -s $GECKODRIVER/geckodriver-$VERSION-$ARCH /usr/bin/geckodriver
+else
+	echo "Error: $GECKODRIVER/geckodriver-$VERSION-$ARCH is MiSSING!"
+	exit 1
+fi
+
+### Give permissing to qrljacker
+
+chmod +x /usr/bin/qrljacker
