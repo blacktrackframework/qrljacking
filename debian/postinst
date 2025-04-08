@@ -8,12 +8,12 @@ TARGET_ARCH="$(dpkg --print-architecture)"
 VERSION="0.36.0"
 GECKODRIVER="usr/share/QRLJacker/geckodriver/"
 
-if [ -e "$GECKODRIVER/geckodriver-$VERSION-$ARCH" ];
-	ln -s $GECKODRIVER/geckodriver-$VERSION-$ARCH /usr/local/bin/geckodriver || echo "Failed to create symlink"
-	ln -s $GECKODRIVER/geckodriver-$VERSION-$ARCH /usr/local/bin/geckodriver || echo "Failed to create symlink"
-	ln -s $GECKODRIVER/geckodriver-$VERSION-$ARCH /usr/bin/geckodriver || echo "Failed to create symlink"
+if [ -e "$GECKODRIVER/geckodriver-$VERSION-$TARGET_ARCH" ];
+	ln -s $GECKODRIVER/geckodriver-$VERSION-$TARGET_ARCH /usr/local/bin/geckodriver || echo "Failed to create symlink"
+	ln -s $GECKODRIVER/geckodriver-$VERSION-$TARGET_ARCH /usr/local/bin/geckodriver || echo "Failed to create symlink"
+	ln -s $GECKODRIVER/geckodriver-$VERSION-$TARGET_ARCH /usr/bin/geckodriver || echo "Failed to create symlink"
 else
-	echo "Error: $GECKODRIVER/geckodriver-$VERSION-$ARCH is MiSSING!" > /tmp/qrljacking-failed.txt
+	echo "Error: $GECKODRIVER/geckodriver-$VERSION-$TARGET_ARCH is MiSSING!" > /tmp/qrljacking-failed.txt
 fi
 
 ### Give permissing to qrljacker
